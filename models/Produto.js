@@ -39,16 +39,16 @@ const Produto = (sequelize, DataTypes) => {
       }
     )
     
-    // Produto.associate = (models) => {
-    //   Produto.belongsTo(models.Produto, {
-    //     foreignKey: 'fk_usuario',
-    //     as: 'usuario'
-    //   });
-    //   Produto.hasMany(models.Produto, {
-    //     foreignKey: 'fk_Produtos',
-    //     as: 'Produtos'
-    //   });
-    // }
+    produto.associate = (models) => {
+      produto.belongsTo(models.Categoria, {
+        foreignKey: 'fk_categoria',
+        as: 'categoria'
+      });
+    produto.belongsTo(models.Editora, {
+        foreignKey: 'fk_editora',
+        as: 'editora'
+      });
+    }
   
     return produto;
   }

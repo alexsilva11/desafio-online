@@ -20,9 +20,9 @@ const Editora = (sequelize, DataTypes) => {
     )
     
     Editora.associate = (models) => {
-      Editora.belongsTo(models.Editora, {
-        foreignKey: 'fk_usuario',
-        as: 'usuario'
+      Editora.hasMany(models.Produto, {
+        foreignKey: 'fk_editora',
+        as: 'editora'
       });
     }
   
